@@ -41,8 +41,8 @@ def get_set_power(game):
 def solve_p1(input_str):
     id_sum = 0
     games = parse_input(input_str)
-    for game_id, game_set in games.items():
-        if check_game(game_set, TEST_SET):
+    for game_id, game in games.items():
+        if check_game(game, TEST_SET):
             id_sum += game_id
     return id_sum
 
@@ -50,8 +50,8 @@ def solve_p1(input_str):
 def solve_p2(input_str):
     game_power_sum = 0
     games = parse_input(input_str)
-    for game_set in games.values():
-        game_power_sum += get_set_power(game_set)
+    for game in games.values():
+        game_power_sum += get_set_power(game)
     return game_power_sum
 
 
